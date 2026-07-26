@@ -73,6 +73,23 @@ function Flagship() {
               ))}
             </ul>
 
+            {/* feature matrix */}
+            <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-2 border-t border-line pt-5">
+              {flagship.features.map((f, i) => (
+                <motion.p
+                  key={f}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ delay: 0.4 + i * 0.06, duration: 0.4 }}
+                  className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-mute"
+                >
+                  <span className="h-1 w-1 shrink-0 rounded-full bg-acid" aria-hidden="true" />
+                  {f}
+                </motion.p>
+              ))}
+            </div>
+
             <div className="mt-auto flex flex-wrap gap-2 pt-7">
               {flagship.tags.map((t) => (
                 <span key={t} className="rounded-full border border-line bg-base px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-mute">

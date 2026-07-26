@@ -22,6 +22,23 @@ html {
   background: var(--color-base);
 }
 
+/* ---- light theme (toggled via .light on <html>, saved in localStorage) ---- */
+.light {
+  --color-base: #f4f4ef;
+  --color-panel: #ffffff;
+  --color-panel2: #ecece5;
+  --color-line: #d9d9d0;
+  --color-ink: #16161a;
+  --color-mute: #5c5c66;
+  --color-acid: #4d7c0f;
+  --color-acid-deep: #3f6212;
+}
+
+html,
+body {
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
 body {
   background: var(--color-base);
   color: var(--color-ink);

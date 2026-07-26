@@ -384,14 +384,22 @@ export const flagship = {
   image: './projects/mwasalaty.jpg',
   alt: 'TechFront Hackathon award ceremony — Mwasalaty taking 3rd place',
   label: 'Flagship — AI Product',
-  title: 'Mwasalaty (مواصلاتي)',
+  title: 'Mwasalaty Express (مواصلاتي)',
   desc: 'AI-powered smart transportation platform that makes public transport in Egypt easier and smarter. Designed, built and presented completely solo — then taken from hackathon demo to a formal research initiative and a filed patent.',
   highlights: [
     '3rd place — TechFront Hackathon 2025–26',
     'Patent filed — “Mwasalaty Express”',
     'Solo design & build',
   ],
-  tags: ['Python', 'AI Models', 'Product Design'],
+  features: [
+    'AI route recommendation',
+    'Real-time tracking',
+    'AI prediction models',
+    'Smart maps & notifications',
+    'Payment system',
+    'Admin dashboard',
+  ],
+  tags: ['Python', 'Flask', 'PostgreSQL', 'React', 'Leaflet', 'Socket.IO'],
 }
 
 export const showcase = [

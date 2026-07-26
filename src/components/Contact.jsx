@@ -44,7 +44,7 @@ export default function Contact() {
           <ul className="mt-10 space-y-4">
             {[
               { label: 'Email', value: site.email, href: `mailto:${site.email}` },
-              { label: 'Phone / WhatsApp', value: site.phone, href: `tel:${site.phoneHref}` },
+              { label: 'WhatsApp / Phone', value: site.phone, href: `https://wa.me/${site.phoneHref.replace('+', '')}`, external: true },
               { label: 'GitHub', value: site.githubHandle, href: site.github, external: true },
               { label: 'LinkedIn', value: site.linkedinHandle, href: site.linkedin, external: true },
               { label: 'Instagram', value: site.instagramHandle, href: site.instagram, external: true },

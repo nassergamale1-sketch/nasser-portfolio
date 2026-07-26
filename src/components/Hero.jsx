@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion'
+import TypingText from './ui/TypingText'
 import { site, marquee } from '../data/content'
 
 // Hero entrance starts as the intro curtain lifts (delay passed via `custom`).
@@ -146,25 +147,45 @@ export default function Hero() {
             <AnimatedWord text="Gamal" className="text-stroke text-5xl sm:text-7xl lg:text-8xl" />
           </motion.h1>
 
-          <motion.p variants={rise} className="mt-6 max-w-xl text-lg text-mute md:text-xl">
+          {/* typing rotation — terminal style */}
+          <motion.p variants={rise} className="mt-5 h-6 font-mono text-sm text-acid md:text-base">
+            <span className="text-mute">&gt; </span>
+            <TypingText
+              phrases={[
+                'Building intelligent systems.',
+                'AI & Machine Learning student.',
+                'Computer vision with YOLO.',
+                'Growing brands with data.',
+              ]}
+            />
+          </motion.p>
+
+          <motion.p variants={rise} className="mt-4 max-w-xl text-lg text-mute md:text-xl">
             <span className="text-ink">{site.tagline}</span>
             <br />
             AI &amp; ML student, hackathon winner and patent filer — with 3+ years
             growing brands, celebrities and influencers online.
           </motion.p>
 
-          <motion.div variants={rise} className="mt-9 flex flex-wrap items-center gap-4">
-            <a
-              href="#contact"
-              className="group relative rounded-full bg-acid px-7 py-3.5 font-mono text-sm font-bold uppercase tracking-widest text-base transition-transform hover:-translate-y-0.5"
-            >
-              Contact me →
-            </a>
+          <motion.div variants={rise} className="mt-9 flex flex-wrap items-center gap-3">
             <a
               href="#work"
-              className="rounded-full border border-line px-7 py-3.5 font-mono text-sm uppercase tracking-widest text-ink transition-colors hover:border-acid hover:text-acid"
+              className="rounded-full bg-acid px-6 py-3.5 font-mono text-sm font-bold uppercase tracking-widest text-base transition-transform hover:-translate-y-0.5"
             >
-              View work
+              View work →
+            </a>
+            <a
+              href="./Nasser_Gamal_CV.pdf"
+              download="Nasser_Gamal_CV.pdf"
+              className="rounded-full border border-acid/50 px-6 py-3.5 font-mono text-sm font-bold uppercase tracking-widest text-acid transition-all hover:-translate-y-0.5 hover:bg-acid/10"
+            >
+              Download CV ↓
+            </a>
+            <a
+              href="#contact"
+              className="rounded-full border border-line px-6 py-3.5 font-mono text-sm uppercase tracking-widest text-ink transition-colors hover:border-acid hover:text-acid"
+            >
+              Contact me
             </a>
           </motion.div>
         </div>

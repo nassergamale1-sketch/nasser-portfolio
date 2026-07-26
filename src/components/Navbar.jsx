@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
+import ThemeToggle from './ui/ThemeToggle'
 import { nav, site } from '../data/content'
 
 // Floating pill nav — appears docked top-center, highlights active section.
@@ -62,8 +63,9 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA + mobile toggle */}
+        {/* theme + CTA + mobile toggle */}
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <a
             href={`mailto:${site.email}`}
             className="hidden shrink-0 whitespace-nowrap rounded-full bg-ink px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-widest text-base transition-colors hover:bg-acid md:block"
