@@ -70,14 +70,14 @@ function ConfigCard() {
 }
 
 // Portrait + config card as one clean stacked composition —
-// no overlap, no rotation; a single offset acid frame wraps both.
+// a soft acid glow sits behind instead of hard offset lines.
 function HeroVisual() {
   return (
     <motion.div variants={rise} className="relative mx-auto w-64 sm:w-80 lg:ml-auto lg:w-[320px]">
-      {/* one offset frame behind the whole composition */}
+      {/* soft glow behind the composition */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl border border-acid/50"
+        className="absolute -inset-8 rounded-full bg-acid/[0.13] blur-3xl"
       />
       <div className="relative space-y-3">
         <div className="relative overflow-hidden rounded-2xl border border-line bg-panel">

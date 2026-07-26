@@ -184,13 +184,14 @@ export default function Certifications() {
           </div>
         </Reveal>
 
-        {/* moving certificate wall — real scans */}
+        {/* moving certificate wall — real scans.
+            Few scans → repeat them 4× so the loop never shows an empty gap. */}
         {scanned.length > 0 && (
           <Reveal className="mb-14">
             <div className="relative overflow-hidden rounded-2xl border border-line bg-panel/40 py-6">
               <div className="marquee-track marquee-slow">
-                {[0, 1].map((copy) => (
-                  <div key={copy} className="flex shrink-0 items-center" aria-hidden={copy === 1}>
+                {(scanned.length < 8 ? [0, 1, 2, 3] : [0, 1]).map((copy) => (
+                  <div key={copy} className="flex shrink-0 items-center" aria-hidden={copy !== 0}>
                     {scanned.map((cert) => (
                       <CertThumb key={`${copy}-${cert.title}`} cert={cert} onOpen={setSelected} />
                     ))}
