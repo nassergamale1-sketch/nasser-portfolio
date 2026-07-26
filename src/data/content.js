@@ -43,24 +43,43 @@ export const stats = [
 ]
 
 // Services — what clients can hire him for.
+// `icon`: 'ai' | 'web' | 'growth' (mapped to SVGs in Services.jsx)
 export const services = [
   {
     num: '01',
+    icon: 'ai',
     title: 'AI Development',
-    desc: 'Real AI products — from computer vision (OpenCV, YOLO) to smart platforms like Mwasalaty. Award-winning, patent-backed work.',
+    desc: 'Real AI products — award-winning and patent-backed, not just demos.',
+    points: [
+      'Computer vision & ML models',
+      'AI tools & smart automations',
+      'From idea to working product',
+    ],
     tags: ['Python', 'Machine Learning', 'Computer Vision'],
     featured: true,
   },
   {
     num: '02',
+    icon: 'web',
     title: 'Web Development',
-    desc: 'Fast, modern websites — from landing pages to full builds. Designed well, deployed properly, easy to update.',
+    desc: 'Fast, modern websites that look sharp and load quick.',
+    points: [
+      'Landing pages & full websites',
+      'Responsive & SEO-ready',
+      'Deployed & easy to update',
+    ],
     tags: ['Front-End', 'React', 'Deployment'],
   },
   {
     num: '03',
+    icon: 'growth',
     title: 'Growth & Social Media',
-    desc: 'Content strategy, paid ads on Meta & TikTok, and SEO. Plans built on data — not guesses.',
+    desc: 'Growth built on data — not guesses.',
+    points: [
+      'Meta & TikTok ad campaigns',
+      'Content strategy & SEO',
+      'Clear performance reports',
+    ],
     tags: ['Meta Ads', 'TikTok Ads', 'SEO'],
   },
 ]
