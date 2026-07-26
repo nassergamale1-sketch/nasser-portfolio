@@ -33,12 +33,12 @@ export default function Navbar() {
     >
       <nav
         aria-label="Main navigation"
-        className="flex w-full max-w-3xl items-center justify-between rounded-full border border-line bg-base/80 py-2 pl-5 pr-2 backdrop-blur-md"
+        className="flex w-full max-w-4xl items-center justify-between gap-3 rounded-full border border-line bg-base/80 py-2 pl-5 pr-2 backdrop-blur-md"
       >
         {/* logo */}
         <a
           href="#top"
-          className="font-mono text-sm font-bold tracking-tight text-ink"
+          className="shrink-0 font-mono text-sm font-bold tracking-tight text-ink"
           aria-label="Back to top"
         >
           <span className="text-acid">ng</span>.dev
@@ -50,7 +50,7 @@ export default function Navbar() {
             <li key={item.id}>
               <a
                 href={`#${item.id}`}
-                className={`rounded-full px-3 py-1.5 font-mono text-[11px] uppercase tracking-widest transition-colors ${
+                className={`block whitespace-nowrap rounded-full px-2.5 py-1.5 font-mono text-[11px] uppercase tracking-wider transition-colors xl:px-3 xl:tracking-widest ${
                   active === item.id
                     ? 'bg-acid text-base'
                     : 'text-mute hover:text-ink'
@@ -66,7 +66,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <a
             href={`mailto:${site.email}`}
-            className="hidden rounded-full bg-ink px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-widest text-base transition-colors hover:bg-acid md:block"
+            className="hidden shrink-0 whitespace-nowrap rounded-full bg-ink px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-widest text-base transition-colors hover:bg-acid md:block"
           >
             Hire me
           </a>
