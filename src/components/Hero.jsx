@@ -41,15 +41,15 @@ function AnimatedWord({ text, className = '' }) {
 // Compact fake config file card.
 function ConfigCard() {
   return (
-    <div className="rounded-xl border border-line bg-panel font-mono text-[11.5px] leading-relaxed shadow-[0_18px_50px_-12px_rgba(0,0,0,0.8),0_0_50px_-18px_rgba(163,230,53,0.35)]">
+    <div className="rounded-xl border border-line bg-panel font-mono text-[11px] leading-relaxed shadow-[0_18px_50px_-12px_rgba(0,0,0,0.8),0_0_50px_-18px_rgba(163,230,53,0.35)]">
       {/* window chrome */}
-      <div className="flex items-center gap-1.5 border-b border-line px-3 py-2">
+      <div className="flex items-center gap-1.5 border-b border-line px-3 py-1.5">
         <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
         <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
         <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
         <span className="ml-2 text-[10px] text-mute">nasser.config.js</span>
       </div>
-      <div className="overflow-x-auto p-4 text-mute">
+      <div className="overflow-x-auto p-3.5 text-mute">
         <pre className="whitespace-pre">
           <code>
             <span className="text-[#c084fc]">const</span>{' '}
@@ -73,7 +73,7 @@ function ConfigCard() {
 // a soft acid glow sits behind instead of hard offset lines.
 function HeroVisual() {
   return (
-    <motion.div variants={rise} className="relative mx-auto w-64 sm:w-80 lg:ml-auto lg:w-[320px]">
+    <motion.div variants={rise} className="relative mx-auto w-64 sm:w-72 lg:ml-auto lg:w-[280px]">
       {/* soft glow behind the composition */}
       <div
         aria-hidden="true"
@@ -98,7 +98,7 @@ function HeroVisual() {
         </div>
 
         {/* terminal card — tucked neatly under the photo, same width */}
-        <div className="hidden lg:block">
+        <div className="mt-3 hidden lg:block">
           <ConfigCard />
         </div>
       </div>
@@ -112,7 +112,7 @@ export default function Hero() {
   const introDelay = reduce ? 0 : 2.1
 
   return (
-    <section id="top" className="relative flex min-h-svh flex-col justify-between overflow-hidden pt-28">
+    <section id="top" className="relative flex min-h-svh flex-col justify-between overflow-hidden pt-24">
       {/* blueprint grid backdrop */}
       <div className="bg-grid grid-fade pointer-events-none absolute inset-0" aria-hidden="true" />
       {/* giant ghost letter */}
@@ -180,7 +180,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: introDelay + 0.5, duration: 0.8 }}
-        className="relative mt-16 border-y border-line bg-panel/60 py-4"
+        className="relative mt-10 border-y border-line bg-panel/60 py-4"
       >
         {/* items doubled inside each half so the loop never shows a gap */}
         <div className="marquee-track" aria-hidden="true">
