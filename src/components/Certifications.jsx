@@ -36,6 +36,13 @@ function TrophyIcon() {
   )
 }
 
+// Repeat the item set until one track half is wider than any screen —
+// the -50% loop then never shows an empty gap, on any monitor.
+function repeatToFill(items, minCount) {
+  const times = Math.max(1, Math.ceil(minCount / items.length))
+  return Array.from({ length: times }, () => items).flat()
+}
+
 // Marquee thumbnail — hides itself if the scan file doesn't exist yet.
 function CertThumb({ cert, onOpen }) {
   const [ok, setOk] = useState(true)
@@ -113,13 +120,14 @@ function CertCard({ cert, onOpen }) {
 
 // One infinite row — `reverse` flips the direction.
 function CertRow({ items, reverse = false, onOpen }) {
+  const filled = repeatToFill(items, 14)
   return (
     <div className="overflow-hidden py-2">
       <div className={`marquee-track marquee-slow ${reverse ? 'marquee-reverse' : ''}`}>
         {[0, 1].map((copy) => (
           <div key={copy} className="flex shrink-0" aria-hidden={copy === 1}>
-            {items.map((cert) => (
-              <CertCard key={`${copy}-${cert.title}`} cert={cert} onOpen={onOpen} />
+            {filled.map((cert, i) => (
+              <CertCard key={`${copy}-${i}`} cert={cert} onOpen={onOpen} />
             ))}
           </div>
         ))}
@@ -184,16 +192,15 @@ export default function Certifications() {
           </div>
         </Reveal>
 
-        {/* moving certificate wall — real scans.
-            Few scans → repeat them 4× so the loop never shows an empty gap. */}
+        {/* moving certificate wall — real scans, repeated to fill any width. */}
         {scanned.length > 0 && (
           <Reveal className="mb-14">
             <div className="relative overflow-hidden rounded-2xl border border-line bg-panel/40 py-6">
               <div className="marquee-track marquee-slow">
-                {(scanned.length < 8 ? [0, 1, 2, 3] : [0, 1]).map((copy) => (
-                  <div key={copy} className="flex shrink-0 items-center" aria-hidden={copy !== 0}>
-                    {scanned.map((cert) => (
-                      <CertThumb key={`${copy}-${cert.title}`} cert={cert} onOpen={setSelected} />
+                {[0, 1].map((copy) => (
+                  <div key={copy} className="flex shrink-0 items-center" aria-hidden={copy === 1}>
+                    {repeatToFill(scanned, 18).map((cert, i) => (
+                      <CertThumb key={`${copy}-${i}`} cert={cert} onOpen={setSelected} />
                     ))}
                   </div>
                 ))}
