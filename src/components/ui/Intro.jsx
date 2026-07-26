@@ -48,7 +48,7 @@ export default function Intro() {
                   duration: 0.6,
                   ease: [0.21, 0.65, 0.36, 1],
                 }}
-                className="font-display text-[clamp(2.2rem,8.5vw,6.5rem)] font-extrabold uppercase leading-none tracking-tight text-ink"
+                className="font-display text-[clamp(1.4rem,6.5vw,5.5rem)] font-extrabold uppercase leading-none tracking-tight text-ink"
               >
                 {ch === ' ' ? ' ' : ch}
               </motion.span>
@@ -68,7 +68,7 @@ export default function Intro() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.25, duration: 0.5 }}
-            className="mt-5 font-mono text-[11px] uppercase tracking-[0.4em] text-mute"
+            className="mt-5 px-4 text-center font-mono text-[10px] uppercase tracking-[0.25em] text-mute sm:text-[11px] sm:tracking-[0.4em]"
           >
             AI Builder <span className="text-acid">×</span> Growth Marketer
           </motion.p>
