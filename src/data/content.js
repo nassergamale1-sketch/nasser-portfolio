@@ -354,36 +354,28 @@ export const certifications = [
 ]
 
 // ---------------------------------------------------------------
-//  PROJECTS — first two are real AI projects from the CV.
-//  To add a screenshot: drop it in /public/projects/
-//  (e.g. project-1.jpg) and it appears automatically.
-//  `kind` is either 'dev' or 'growth' (controls the label color).
+//  PROJECTS
+//  flagship  → big hero case-study card (Mwasalaty).
+//  showcase  → cards WITH real screenshots (add `image`).
+//  index     → compact rows, no image needed.
+//  To promote an index item to showcase later: move it up and
+//  add an `image` path pointing to /public/projects/.
 // ---------------------------------------------------------------
-export const projects = [
-  {
-    image: './projects/mwasalaty.jpg',
-    alt: 'TechFront Hackathon certificate for Mwasalaty, held up in the award hall',
-    title: 'Mwasalaty (مواصلاتي)',
-    desc: 'AI-powered smart transportation platform for Egypt — designed and built completely solo, now patent-pending.',
-    result: '3rd place + patent filed',
-    kind: 'dev',
-  },
-  {
-    image: './projects/project-2.jpg',
-    alt: 'Real-time object detection system — Python, OpenCV, YOLO',
-    title: 'Real-Time Object Detection',
-    desc: 'Live video object detection and tracking built with Python, OpenCV and YOLO.',
-    result: 'Computer vision — YOLO',
-    kind: 'dev',
-  },
-  {
-    image: './projects/project-3.jpg',
-    alt: 'Campaign results screenshot — placeholder',
-    title: 'Influencer Growth Campaign',
-    desc: 'Full-funnel content and ads strategy for a public figure.',
-    result: '+40% engagement',
-    kind: 'growth',
-  },
+export const flagship = {
+  image: './projects/mwasalaty.jpg',
+  alt: 'TechFront Hackathon award ceremony — Mwasalaty taking 3rd place',
+  label: 'Flagship — AI Product',
+  title: 'Mwasalaty (مواصلاتي)',
+  desc: 'AI-powered smart transportation platform that makes public transport in Egypt easier and smarter. Designed, built and presented completely solo — then taken from hackathon demo to a formal research initiative and a filed patent.',
+  highlights: [
+    '3rd place — TechFront Hackathon 2025–26',
+    'Patent filed — “Mwasalaty Express”',
+    'Solo design & build',
+  ],
+  tags: ['Python', 'AI Models', 'Product Design'],
+}
+
+export const showcase = [
   {
     image: './projects/aqargo.jpg',
     alt: 'Aqar-Go real estate platform — homepage with smart search and property listings',
@@ -392,19 +384,30 @@ export const projects = [
     result: 'Full product build',
     kind: 'dev',
   },
+]
+
+export const workIndex = [
   {
-    image: './projects/project-5.jpg',
-    alt: 'Paid ads dashboard screenshot — placeholder',
-    title: 'Meta & TikTok Ads Sprint',
+    title: 'Real-Time Object Detection',
+    desc: 'Live video detection & tracking — Python, OpenCV, YOLO.',
+    result: 'Computer vision',
+    kind: 'dev',
+  },
+  {
+    title: 'Influencer Growth Campaigns',
+    desc: 'Full-funnel content and ads strategy for public figures.',
+    result: '+40% engagement',
+    kind: 'growth',
+  },
+  {
+    title: 'Meta & TikTok Ads Sprints',
     desc: 'Paid acquisition with weekly data-driven optimization.',
     result: 'Lower CPA',
     kind: 'growth',
   },
   {
-    image: './projects/project-6.jpg',
-    alt: 'SEO analytics screenshot — placeholder',
-    title: 'SEO Visibility Push',
-    desc: 'On-page SEO and content plan for a client brand.',
+    title: 'SEO Visibility Pushes',
+    desc: 'On-page SEO and content plans for client brands.',
     result: 'Ranking gains',
     kind: 'growth',
   },
