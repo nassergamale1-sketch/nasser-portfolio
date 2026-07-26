@@ -182,12 +182,13 @@ export default function Hero() {
         transition={{ delay: introDelay + 0.5, duration: 0.8 }}
         className="relative mt-16 border-y border-line bg-panel/60 py-4"
       >
+        {/* items doubled inside each half so the loop never shows a gap */}
         <div className="marquee-track" aria-hidden="true">
           {[0, 1].map((copy) => (
             <div key={copy} className="flex shrink-0 items-center">
-              {marquee.map((item) => (
+              {[...marquee, ...marquee].map((item, i) => (
                 <span
-                  key={`${copy}-${item}`}
+                  key={`${copy}-${i}`}
                   className="mx-6 flex items-center gap-6 font-mono text-xs uppercase tracking-[0.25em] text-mute"
                 >
                   {item} <span className="text-acid">✦</span>
