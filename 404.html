@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Nasser Gamal</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      :root { --base: #0a0a0b; --ink: #f2f2ec; --mute: #8e8e98; --acid: #a3e635; --line: #26262b; }
+      * { margin: 0; box-sizing: border-box; }
+      body {
+        min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        gap: 1.25rem; background: var(--base); color: var(--ink); font-family: 'JetBrains Mono', monospace;
+        text-align: center; padding: 2rem;
+      }
+      h1 { font-family: 'Syne', sans-serif; font-size: clamp(5rem, 22vw, 12rem); font-weight: 800; line-height: 0.9;
+           -webkit-text-stroke: 2px var(--acid); color: transparent; }
+      p { color: var(--mute); font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; }
+      a {
+        margin-top: 0.75rem; display: inline-block; background: var(--acid); color: var(--base);
+        padding: 0.9rem 1.8rem; border-radius: 999px; text-decoration: none; font-weight: 700;
+        font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; transition: transform 0.2s;
+      }
+      a:hover { transform: translateY(-2px); }
+    </style>
+  </head>
+  <body>
+    <h1>404</h1>
+    <p>This page does not exist — but the portfolio does.</p>
+    <a href="/">Back to home</a>
+  </body>
+</html>
