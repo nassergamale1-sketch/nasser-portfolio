@@ -1,50 +1,90 @@
 # Nasser Gamal — Portfolio
 
-Dark, terminal-inspired single-page portfolio. Vite + React 19 + Tailwind CSS v4 + Framer Motion. Builds to pure static files.
+Personal portfolio of **Nasser Gamal Mohamed Idris** — AI & Machine Learning student,
+founder of Mwasalaty (3rd place @ TechFront Hackathon, patent filed) and digital
+marketing specialist.
 
-## Run locally
+**Live:** https://nassergamale1-sketch.github.io/nasser-portfolio/
+
+---
+
+## Tech Stack
+
+| Layer | Tool |
+|---|---|
+| Framework | React 19 + Vite 7 |
+| Styling | Tailwind CSS v4 (CSS-first config, dark/light themes) |
+| Animation | Framer Motion 12 (scroll reveals, parallax, typing, counters, marquees) |
+| Fonts | Syne · Space Grotesk · JetBrains Mono (Google Fonts) |
+| Hosting | GitHub Pages (`gh-pages` branch, static build) |
+
+## Run Locally
 
 ```bash
 npm install
 npm run dev        # http://localhost:5173
 ```
 
-## Build for deployment
+## Build & Deploy
 
 ```bash
-npm run build      # output in /dist — upload anywhere
-npm run preview    # test the production build locally
+npm run build      # outputs static site to dist/
 ```
 
-`dist/` is fully static — drag-and-drop it to **Netlify**, connect the repo to **Vercel**, or serve it from **GitHub Pages**. No server needed.
+Deploy to GitHub Pages (from repo root):
 
-## Editing content (no code knowledge needed)
+```bash
+cd dist
+git init -b gh-pages && git add -A && git commit -m deploy
+git push -f https://github.com/nassergamale1-sketch/nasser-portfolio.git gh-pages
+cd .. && rm -rf dist/.git
+```
 
-**Everything lives in `src/data/content.js`** — name, links, about text, skills, experience, press, certifications and projects. Edit that one file and save.
+The site is 100% static — it also deploys as-is on **Netlify** or **Vercel**
+(build command `npm run build`, output directory `dist`).
 
-### Swapping in real project screenshots
+## Editing Content
 
-1. Put images in `public/projects/` named `project-1.jpg`, `project-2.jpg`, … (any format works — update the filename in content.js if you use `.png`)
-2. In `src/data/content.js`, find the `projects` array and update each entry's `title`, `desc`, `result` (e.g. `"+40% engagement"`), and `alt` text.
+All copy, links, projects, certifications, skills and stats live in **one file**:
 
-Until a real image exists, cards show a styled "screenshot coming soon" placeholder automatically — nothing ever looks broken.
+```
+src/data/content.js
+```
+
+Images go in `public/`:
+
+| Folder / file | Used for |
+|---|---|
+| `public/nasser.jpg` | Hero portrait |
+| `public/nasser-speaking.jpg` | Press section photo |
+| `public/certificates/*.jpg` | Certificate scans (auto-hidden if missing) |
+| `public/projects/*.jpg` | Project screenshots |
+| `public/moments/*.jpg` | Event photos strip (auto-hidden if missing) |
+| `public/Nasser_Gamal_CV.pdf` | “Download CV” button |
+
+Missing images never break the layout — components hide them automatically.
+
+## Custom Domain (later)
+
+1. Buy a domain (e.g. `nassergamal.com`).
+2. Add a `CNAME` file containing the domain to the `gh-pages` branch.
+3. Point DNS `A` records to GitHub Pages IPs + `www` CNAME to
+   `nassergamale1-sketch.github.io`.
+4. Enable **Enforce HTTPS** in the repo Settings → Pages.
+
+> Note: don’t add the CNAME file before the domain is purchased and DNS is set —
+> it would break the current github.io URL.
 
 ## Structure
 
 ```
 src/
-  data/content.js        ← ALL text/content here
-  components/
-    Navbar.jsx           sticky pill nav + mobile menu
-    Hero.jsx             name, tagline, terminal card, marquee
-    About.jsx            pull-quote + summary + fact chips
-    Skills.jsx           builder.exe / growth.exe toggle
-    Experience.jsx       git-log style timeline
-    Press.jsx            TV appearance badges
-    Certifications.jsx   badge wall
-    Projects.jsx         swap-ready work gallery
-    Contact.jsx          channels + mailto form
-    Footer.jsx
-    ui/Reveal.jsx        scroll-reveal wrapper
-    ui/SectionHeader.jsx numbered section headings
+├── data/content.js        ← ALL editable content
+├── components/            ← one component per section
+│   ├── Navbar, Hero, About, Stats, Services, Skills,
+│   ├── Experience, Press, Moments, Certifications,
+│   ├── Projects, Contact, Footer
+│   └── ui/                ← Reveal, SpotlightCard, Lightbox, Intro,
+│                            TypingText, ScrollProgress, BackToTop
+└── index.css              ← Tailwind v4 theme tokens (dark + light)
 ```
