@@ -153,6 +153,15 @@ export const skills = {
   },
 }
 
+// Journey milestones — horizontal strip above the experience log.
+export const journey = [
+  { year: '2022', label: 'Started freelance marketing' },
+  { year: '2023', label: 'Began BSc in AI — AOU' },
+  { year: '2024', label: 'Self-taught Python & ML' },
+  { year: '2025', label: 'Built Mwasalaty — 3rd @ TechFront' },
+  { year: '2026', label: 'Patent filed · open to internships' },
+]
+
 export const experience = [
   {
     period: '2025 — Present',

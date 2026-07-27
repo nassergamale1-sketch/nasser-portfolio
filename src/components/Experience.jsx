@@ -1,12 +1,52 @@
+import { motion } from 'framer-motion'
 import Reveal from './ui/Reveal'
 import SectionHeader from './ui/SectionHeader'
-import { experience } from '../data/content'
+import { experience, journey } from '../data/content'
 
 // Git-log style timeline: commits on a branch line, hover glow.
 export default function Experience() {
   return (
     <section id="experience" className="mx-auto max-w-7xl px-5 py-24 md:px-10 md:py-36">
       <SectionHeader num="04" kicker="git log --oneline" title="Track" accent="record" />
+
+      {/* journey strip — year milestones connected by an animated line */}
+      <Reveal className="mb-16">
+        <div className="relative">
+          <motion.div
+            aria-hidden="true"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 1.2, ease: [0.21, 0.65, 0.36, 1] }}
+            className="absolute left-0 right-0 top-[9px] hidden h-px origin-left bg-gradient-to-r from-acid via-acid/50 to-line md:block"
+          />
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-5 md:gap-4">
+            {journey.map((j, i) => (
+              <motion.div
+                key={j.year}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ delay: i * 0.15, duration: 0.5 }}
+                className="relative"
+              >
+                <span
+                  aria-hidden="true"
+                  className={`mb-3 hidden h-[18px] w-[18px] items-center justify-center rounded-full border-2 md:flex ${
+                    i === journey.length - 1 ? 'border-acid bg-acid/20' : 'border-line bg-base'
+                  }`}
+                >
+                  {i === journey.length - 1 && (
+                    <span className="pulse-dot h-[7px] w-[7px] rounded-full bg-acid" />
+                  )}
+                </span>
+                <p className="font-display text-xl font-extrabold text-acid">{j.year}</p>
+                <p className="mt-1 text-sm leading-snug text-mute">{j.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </Reveal>
 
       <div className="relative ml-2 border-l border-line pl-8 md:ml-6 md:pl-14">
         {experience.map((job, i) => (

@@ -41,7 +41,7 @@ export default function Moments() {
                   loading="lazy"
                   className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
                 />
-                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-base via-base/70 to-transparent px-5 pb-4 pt-14 font-mono text-xs uppercase tracking-[0.2em] text-zinc-300">
+                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-base via-base/70 to-transparent px-5 pb-4 pt-14 font-mono text-xs uppercase tracking-[0.2em] text-ink">
                   {m.caption}
                 </figcaption>
               </figure>
