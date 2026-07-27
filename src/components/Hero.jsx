@@ -159,9 +159,10 @@ export default function Hero() {
           </motion.h1>
 
           {/* typing rotation — terminal style */}
-          <motion.p variants={rise} className="mt-5 h-6 font-mono text-sm text-acid md:text-base">
+          <motion.p variants={rise} className="mt-5 h-6 font-mono text-sm md:text-base">
             <span className="text-mute">&gt; </span>
             <TypingText
+              className="text-acid"
               phrases={[
                 'Building intelligent systems.',
                 'AI & Machine Learning student.',
