@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nassergamale1-sketch.github.io/nasser-portfolio/sitemap.xml
+Sitemap: https://nassergamal.com/sitemap.xml
