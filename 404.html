@@ -32,5 +32,10 @@
     <h1>404</h1>
     <p>This page does not exist — but the portfolio does.</p>
     <a href="/">Back to home</a>
+    <script>
+      if (/^\/(?:media|credentials|cv)\/?$/.test(location.pathname) || location.pathname.startsWith('/projects/')) {
+        location.replace('/?route=' + encodeURIComponent(location.pathname + location.search + location.hash))
+      }
+    </script>
   </body>
 </html>
